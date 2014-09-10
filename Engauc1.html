@@ -1,0 +1,43 @@
+<h1>イングリッシュオークション 被験者</h1>
+
+<p>準備中です。少々お待ちください。</p>
+
+<div class="hidden" id="start">
+<p>あなたはオークションである財を競り落としたいと考えています。<br>
+下記のルールをよく読み、実験に参加してください。
+</p>
+
+<p>
+あなたにとってのその財の価値は、金額にして<strong><span id="value"></span>円</strong>の価値があり、<br>
+競り落とした場合の利得は、<strong><span id="value"></span> 円　-　支払った金額</strong>　で表されます。<br>
+競り落とすことができなかった場合の利得は<strong>0</strong>です。また、<span id="value"></span>円を超える入札はできません。<br>
+</p>
+
+<p>
+提示された金額で財を購入したい場合は「購入を希望する」を、そうでない場合は「購入を希望しない」を選択してください<br>
+もし、出品される財の数である<strong><span id="gnum"></span></strong>を購入希望人数が上回った場合、価格を挙げて再び同じ手続きを行い、<br>
+購入希望者が財の数と同じかそれ以下になった時点でオークションは終了とします。<br>
+</p>
+
+<br>
+<p>
+以上の説明を読み、理解した場合は下記の「先へ進む」を押してください。
+全ての被験者がボタンを押した時点で実験はスタートします。
+</p>
+<input class="choice" id="proceed" value="先へ進む" type='submit' />
+</div>
+
+<!-- 後ろに続けるとページが長くなるので別ページに移動したい。add(open(別のhtml))でいける？-->
+
+<div class="hidden" id="auction">
+<p>オークションを開始します。</p>
+<p>出品された財のあなたにとっての価値は<strong><span id="value"></span></strong>です。
+現在の価格は<strong><span id="price"></span></strong>です。</p><br>
+
+<p>購入を希望しますか？</p>
+<input class="choice" id="bid" value="購入を希望する" type="submit" />
+<input class="choice" id="stop" value="購入を希望しない" type="submit" />
+</div>
+
+<div class="hidden" id = "finish">
+<p>オークションは終了しました。</p>

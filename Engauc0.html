@@ -1,0 +1,26 @@
+<h1>イングリッシュオークション　モニター</h1>
+
+<p>初期設定をします。</p>
+<p>参加人数を入力してください。（自然数のみ）</p>
+<div>
+<input class="num" id='plnum' type='text'  />
+
+<p>取引する財の数を入力してください。（自然数のみ）</p>
+<input class="num" id='gnum' type='text'  />
+
+<p>被験者の財の私的価値の範囲（一様分布）を入力してください。</p>
+下限 = <input class="num" id="valuemin" type='text'  />
+上限 = <input class="num" id="valuemax" type='text'  />
+
+<input id='go' type='submit'>
+</div>
+
+
+<div class="hidden" id="ready">
+<input class="choice" id="proceed" value="実験を開始する" type='submit' />
+</div>
+
+<div class="hidden" id="finish">
+<p>オークションが終了しました。
+財は被験者
+</p>
