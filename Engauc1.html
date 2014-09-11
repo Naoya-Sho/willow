@@ -1,43 +1,43 @@
-<h1>�C���O���b�V���I�[�N�V���� �팱��</h1>
+﻿<h1>イングリッシュオークション 被験者</h1>
 
-<p>�������ł��B���X���҂����������B</p>
+<p>準備中です。少々お待ちください。</p>
 
 <div class="hidden" id="start">
-<p>���Ȃ��̓I�[�N�V�����ł���������藎�Ƃ������ƍl���Ă��܂��B<br>
-���L�̃��[�����悭�ǂ݁A�����ɎQ�����Ă��������B
+<p>あなたはオークションである財を競り落としたいと考えています。<br>
+下記のルールをよく読み、実験に参加してください。
 </p>
 
 <p>
-���Ȃ��ɂƂ��Ă̂��̍��̉��l�́A���z�ɂ���<strong><span id="value"></span>�~</strong>�̉��l������A<br>
-���藎�Ƃ����ꍇ�̗����́A<strong><span id="value"></span> �~�@-�@�x���������z</strong>�@�ŕ\����܂��B<br>
-���藎�Ƃ����Ƃ��ł��Ȃ������ꍇ�̗�����<strong>0</strong>�ł��B�܂��A<span id="value"></span>�~�𒴂�����D�͂ł��܂���B<br>
+あなたにとってのその財の価値は、金額にして<strong><span id="value0"></span>円</strong>の価値があり、<br>
+競り落とした場合の利得は、<strong><span id="value1"></span> 円　-　支払った金額</strong>　で表されます。<br>
+競り落とすことができなかった場合の利得は<strong>0</strong>です。また、<strong><span id="value2"></span></strong>円を超える入札はできません。<br>
 </p>
 
 <p>
-�񎦂��ꂽ���z�ō����w���������ꍇ�́u�w������]����v���A�����łȂ��ꍇ�́u�w������]���Ȃ��v��I�����Ă�������<br>
-�����A�o�i�������̐��ł���<strong><span id="gnum"></span></strong>���w����]�l�����������ꍇ�A���i�������čĂѓ����葱�����s���A<br>
-�w����]�҂����̐��Ɠ���������ȉ��ɂȂ������_�ŃI�[�N�V�����͏I���Ƃ��܂��B<br>
+提示された金額で財を購入したい場合は「購入を希望する」を、そうでない場合は「購入を希望しない」を選択してください<br>
+もし、出品される財の数である<strong><span id="gnum"></span></strong>を購入希望人数が上回った場合、価格を挙げて再び同じ手続きを行い、<br>
+購入希望者が財の数と同じかそれ以下になった時点でオークションは終了とします。<br>
 </p>
 
 <br>
 <p>
-�ȏ�̐�����ǂ݁A���������ꍇ�͉��L�́u��֐i�ށv�������Ă��������B
-�S�Ă̔팱�҂��{�^�������������_�Ŏ����̓X�^�[�g���܂��B
+以上の説明を読み、理解した場合は下記の「先へ進む」を押してください。
+全ての被験者がボタンを押した時点で実験はスタートします。
 </p>
-<input class="choice" id="proceed" value="��֐i��" type='submit' />
+<input class="choice" id="proceed" value="先へ進む" type='submit' />
 </div>
 
-<!-- ���ɑ�����ƃy�[�W�������Ȃ�̂ŕʃy�[�W�Ɉړ��������Badd(open(�ʂ�html))�ł�����H-->
+<!-- 後ろに続けるとページが長くなるので別ページに移動したい。-->
 
 <div class="hidden" id="auction">
-<p>�I�[�N�V�������J�n���܂��B</p>
-<p>�o�i���ꂽ���̂��Ȃ��ɂƂ��Ẳ��l��<strong><span id="value"></span></strong>�ł��B
-���݂̉��i��<strong><span id="price"></span></strong>�ł��B</p><br>
+<p>オークションを開始します。</p>
+<p>出品された財のあなたにとっての価値は<strong><span id="value3"></span></strong>です。
+現在の価格は<strong><span id="price"></span></strong>です。</p><br>
 
-<p>�w������]���܂����H</p>
-<input class="choice" id="bid" value="�w������]����" type="submit" />
-<input class="choice" id="stop" value="�w������]���Ȃ�" type="submit" />
+<p>購入を希望しますか？</p>
+<input class="choice" id="bid" value="購入を希望する" type="submit" />
+<input class="choice" id="stop" value="購入を希望しない" type="submit" />
 </div>
 
 <div class="hidden" id = "finish">
-<p>�I�[�N�V�����͏I�����܂����B</p>
+<p>オークションは終了しました。</p>

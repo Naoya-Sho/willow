@@ -1,26 +1,31 @@
-<h1>�C���O���b�V���I�[�N�V�����@���j�^�[</h1>
+﻿<h1>イングリッシュオークション　モニター</h1>
 
-<p>�����ݒ�����܂��B</p>
-<p>�Q���l������͂��Ă��������B�i���R���̂݁j</p>
+<p>初期設定をします。</p>
+<p>参加人数を入力してください。（自然数のみ）</p>
 <div>
 <input class="num" id='plnum' type='text'  />
 
-<p>���������̐�����͂��Ă��������B�i���R���̂݁j</p>
+<p>取引する財の数を入力してください。（自然数のみ）</p>
 <input class="num" id='gnum' type='text'  />
 
-<p>�팱�҂̍��̎��I���l�͈̔́i��l���z�j����͂��Ă��������B</p>
-���� = <input class="num" id="valuemin" type='text'  />
-��� = <input class="num" id="valuemax" type='text'  />
+<p>被験者の財の私的価値の範囲を入力してください。(10の倍数)<br>
+被験者の財の私的価値は、入力された範囲のうちで10を持つ一様分布によって割り当てられます。</p>
+下限 = <input class="num" id="valuemin" type='text'  />
+上限 = <input class="num" id="valuemax" type='text'  />
 
 <input id='go' type='submit'>
 </div>
 
+<p id ="inst"></p>
 
 <div class="hidden" id="ready">
-<input class="choice" id="proceed" value="�������J�n����" type='submit' />
+ <input class="choice" id="proceed" value="実験を開始する" type='submit' />
 </div>
 
+<p class ="hidden" id = "start">
+実験を開始します。</p>
+
 <div class="hidden" id="finish">
-<p>�I�[�N�V�������I�����܂����B
-���͔팱��
+<p>オークションが終了しました。
+財は被験者
 </p>
