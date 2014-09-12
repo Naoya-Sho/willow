@@ -46,15 +46,23 @@ def session(me):
             price += 10
             round += 1
 
+            sleep(3)
+            grab({"tag":"loop"})
+
             put({"tag":"auction", "round":round, "price":price})
             add("<p>Begin round %s. Current price is %s." % (str(round), str(price)))
 
-            while True:  
+            while True:
                 clchoice = take({"tag":"mychoice"})
                 pl += 1
+                winners = []
+
                 if clchoice["choice"] == "bid":
                     count += 1
-                add("<p>Client %s has chosen %s." % (clchoice["client"], clchoice["choice"]))
+                    winners.append(clchoice["client"])
+ 
+                add("<p>Client %s has chosen %s." % (clchoice["client"], clchoice["choice"]), "#action")
+                log(clchoice["client"], clchoice["choice"], price)
 
                 if pl == int(plnum):
                     break
@@ -63,13 +71,14 @@ def session(me):
 
             if count <= int(gnum):
                 show("#finish")
+                grab({"tag":"auction"})
                 put({"tag":"loop","finish":True}) # To tell the clients that the auction has finished.
+                #add("<p>Clients s% have purchased the goods for s% Yen." % (str(winners), str(price)),"#result")
                 break
 
             else:
                 add("<p>There are %s bids for %s goods. Proceed to a next round." % (str(count), str(gnum)))
                 grab({"tag":"auction"})
-                grab({"tag":"loop"})
                 put({"tag":"loop","continue":True}) # To tell the clients that the auction has not finished yet.
                 continue
 
@@ -106,11 +115,10 @@ def session(me):
 
         mychoice = take({"client": me}) # choice in the 1st round
         put({"tag":"mychoice", "choice": mychoice["id"], "client":me}) 
-
         clloop = take({"tag":"loop"}) # For checking whether to proceed or stop
         put(clloop)
 
-        while "continue" in clloop: # loop for rounds after 1st
+        while "continue" in clloop: # loop for rounds after 1st 
             auction = take({"tag":"auction"})
             put(auction)
             add("<p>The number of bids exceeds the number of goods. Please proceed to a next round.</p>")
@@ -120,16 +128,16 @@ def session(me):
             add("<input class='choice' id='stop' value='Stop' type='submit' />")
             mychoicel = take({"client": me})
             put({"tag":"mychoice", "choice":mychoicel["id"], "client":me})
-            sleep(3)
             clloop = take({"tag":"loop"}) # For checking whether to proceed or stop
             put(clloop)
 
         else:
             put({"tag":"result", "choice":mychoicel["id"], "client":me}) # Send a result to the monitor
+            show("#finish")
             if mychoicel["id"] == "bid":
                 payoff = value - auction["price"]
-                add("<p>You successfully purchased the good for %s Yen. </p>"% str(auction["price"]))
-                add("<p>Your final payoff is %s .</p>"% str(payoff))
+                add("<p>You successfully purchased the good for %s Yen. </p>"% str(auction["price"]),"#purchase")
+                add("<p>Your final payoff is %s .</p>"% str(payoff),"#purchase")
 
             else:
                 add("<p>You did not purchase the good.</p>")
